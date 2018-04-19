@@ -43,10 +43,11 @@
             })
         }).done(function() {
             $('.modal .dialog h4').text('Message Sent');
+            $('.modal .dialog p').text('');
             $('.modal').show();
         }).fail(function() {
             $('.modal .dialog h4').text('Error');
-            $('.modal .dialog p').text('Unable to deliver message.')
+            $('.modal .dialog p').text('Unable to deliver message.');
             $('.modal').show();
         });
     });
