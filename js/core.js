@@ -40,10 +40,11 @@
             data: JSON.stringify({
                 value1: name,
                 value2: body
-            })
+            }),
+            contentType: 'application/json'
         }).done(function() {
             $('.modal .dialog h4').text('Message Sent');
-            $('.modal .dialog p').text('');
+            $('.modal .dialog p').text('Your response will arrive in a timely manner.');
             $('.modal').show();
             $name.val('');
             $message.val('');
