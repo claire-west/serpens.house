@@ -40,11 +40,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     position: fixed;
     z-index: 9999;
-    /* background-color: #202225; */
-    
+    background-color: #000;
     background-image: url(https://cdn.discordapp.com/attachments/436020727620304896/436804538993737728/serpens.png);
     background-position: center;
     background-size: cover;
+}
+@media screen and (max-width: 640px) {
+    .top-bar {
+        height: 5.75rem;
+        width: 160%;
+        left: -30%;
+    }
 }
 .top-bar div.top-bar-gradient {
     height: 1rem;
@@ -54,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     padding: 0;
     background: linear-gradient(#000, transparent);
+    /* background-color: #202225; */
     z-index: 9999;
 }
 .top-bar-spacer {
