@@ -57,6 +57,10 @@ button:focus, button:hover {
     width: 100%;
 }
 
+.twitter-timeline {
+    max-height: 100rem;   
+}
+
 .modal {
     position: absolute;
     height: 100%;
