@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     position: absolute;
     padding: 0;
-    background: linear-gradient(#202225, transparent);
+    background: linear-gradient(#000, transparent);
     z-index: 9999;
 }
 .top-bar-spacer {
@@ -64,10 +64,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: height 0.125s;
 }
 .top-bar.shrink {
-    height: 6.5rem;
+    height: 5.75rem;
 }
 .top-bar-spacer.shrink {
-    height: 7.5rem;
+    height: 6.75rem;
 }
 .top-bar.shrink, .top-bar-spacer.shrink {
     -webkit-transition: height 0.5s;
