@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
         width: 160%;
         left: -30%;
     }
+    
+    .top-bar-spacer {
+        height: 6.75rem;
+    }
 }
 .top-bar div.top-bar-gradient {
     height: 1rem;
