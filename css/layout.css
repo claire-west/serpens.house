@@ -45,17 +45,6 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-size: cover;
 }
-@media screen and (max-width: 640px) {
-    .top-bar {
-        height: 5.75rem;
-        width: 160%;
-        left: -30%;
-    }
-    
-    .top-bar-spacer {
-        height: 6.75rem;
-    }
-}
 .top-bar div.top-bar-gradient {
     height: 1rem;
     width: 100%;
@@ -115,6 +104,18 @@ h1, h2, h3, h4, h5, h6 {
 .top-bar img {
     height: 100%;
     width: auto;
+}
+
+@media screen and (max-width: 640px) {
+    .top-bar {
+        height: 5.75rem;
+        width: 160%;
+        left: -30%;
+    }
+    
+    .top-bar-spacer {
+        height: 6.75rem;
+    }
 }
 
 .col {
