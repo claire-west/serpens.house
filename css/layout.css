@@ -31,6 +31,11 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .top-bar {
     height: 14rem;
     width: 100%;
@@ -38,26 +43,47 @@ h1, h2, h3, h4, h5, h6 {
     top: 0px;
     left: 0px;
     display: flex;
+    justify-content: center;
     position: fixed;
     z-index: 9999;
     background-color: #000;
-    background-image: url(https://cdn.discordapp.com/attachments/436020727620304896/436804538993737728/serpens.png);
+
+    -webkit-transition: height 0.5s, width 0.5s, left 0.5s;
+    transition: height 0.5s, width 0.5s, left 0.5s;
+}
+.top-bar .top-bar-img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    top: 0;
+    position: absolute;
     background-position: center;
     background-size: cover;
+    background-image: url(http://serpens.house/static/banner.png);
 }
-.top-bar div.top-bar-gradient {
-    height: 1rem;
+.top-bar .top-bar-nav {
+    height: 2.5rem;
     width: 100%;
-    bottom: -1rem;
+    bottom: -2.5rem;
     left: 0px;
     position: absolute;
     padding: 0;
-    background: linear-gradient(#000, transparent);
-    /* background-color: #202225; */
+    /*background: linear-gradient(#000, transparent);*/
+    background-color: #202225;
     z-index: 9999;
 }
+.top-bar .top-bar-nav div {
+    height: 100%;
+}
+.top-bar .top-bar-nav > div {
+    max-width: 75rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 .top-bar-spacer {
-    height: 15rem;
+    height: 17rem;
 }
 .top-bar, .top-bar-spacer {
     -webkit-transition: height 0.125s;
@@ -67,50 +93,77 @@ h1, h2, h3, h4, h5, h6 {
     height: 5.75rem;
 }
 .top-bar-spacer.shrink {
-    height: 6.75rem;
+    height: 8.25rem;
 }
 .top-bar.shrink, .top-bar-spacer.shrink {
-    -webkit-transition: height 0.5s;
-    transition: height 0.5s;
+    -webkit-transition: height 0.5s, width 0.5s, left 0.5s;
+    transition: height 0.5s, width 0.5s, left 0.5s;
 }
 .top-bar div {
     padding: 0.5rem;
-    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-bar .top-bar-nav a {
     display: flex;
     align-items: center;
 }
-.top-bar div.top-bar-center {
-    text-align: center;
-    display: block;
+.top-bar .top-bar-nav a.button {
+    height: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
-.top-bar div.top-bar-left > * {
-    margin-left: 50%;
+.top-bar .top-bar-nav a.button:hover,
+.top-bar .top-bar-nav a.button.active {
+    background-color: #2f3136;
+}
 
-    -webkit-transition: margin-left 0.5s;
-    transition: margin-left 0.5s;
+.top-bar .top-bar-nav i {
+    font-size: 1.5rem;
 }
-.top-bar.shrink div.top-bar-left > * {
-    margin-left: 0.5rem;
-
-    -webkit-transition: margin-left 0.5s;
-    transition: margin-left 0.5s;
+.top-bar .top-bar-nav span + i {
+    margin-left: 0.5rem
 }
-.top-bar div.top-bar-right > * {
-    margin-left: auto;
+.top-bar div.top-bar-left {
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
 }
-.top-bar div.top-bar-left h3 {
-    text-align: center;
+.top-bar div.top-bar-right {
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .top-bar img {
     height: 100%;
     width: auto;
 }
 
+@media screen and (max-width: 1280px) {
+    .top-bar .top-bar-img {
+        width: 130%;
+        left: -15%;
+
+        -webkit-transition: height 0.5s, width 0.5s, left 0.5s;
+        transition: height 0.5s, width 0.5s, left 0.5s;
+    }
+}
+
 @media screen and (max-width: 640px) {
     .top-bar {
         height: 5.75rem;
+
+        -webkit-transition: height 0.5s;
+        transition: height 0.5s;
+    }
+
+    .top-bar .top-bar-img {
         width: 160%;
         left: -30%;
+
+        -webkit-transition: height 0.5s, width 0.5s, left 0.5s;
+        transition: height 0.5s, width 0.5s, left 0.5s;
     }
     
     .top-bar-spacer {

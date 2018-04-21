@@ -49,6 +49,11 @@ button:focus, button:hover {
     background-color: hsla(218,5%,47%,.6);
 }
 
+a:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
 .error {
     border: 1px solid #A30303;
 }
@@ -57,8 +62,23 @@ button:focus, button:hover {
     width: 100%;
 }
 
+.hidden, [hidden] {
+    display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 .twitter-timeline {
-    max-height: 100rem;   
+    max-height: 100rem;
 }
 
 .modal {

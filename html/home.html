@@ -1,0 +1,48 @@
+<div>
+    <section class="row">
+        <div class="s12 m7 col">
+            <h4>Pierce the Veil</h4>
+            <p z--bind="test"></p>
+            <p z--bind="test"></p>
+            <p z--bind="test"></p>
+            <p z--bind="test"></p>
+            <p z--bind="test"></p>
+            <p z--bind="test"></p>
+        </div>
+        <div class="s12 m5 col">
+            <div class="row nopad">
+                <div class="col nopad">
+                    <h4><i>Contact Us</i></h4>
+                </div>
+                <div class="col nopad">
+                    <label>
+                        <input z--bind="contactName" type="text" placeholder="Your Name" z--class='{
+                            "class": "error",
+                            "path": "contactNameError"
+                        }' />
+                    </label>
+                </div>
+                <div class="col nopad">
+                    <label>
+                        <textarea z--bind="contactMessage" rows="5" placeholder="Message Contents" z--class='{
+                            "class": "error",
+                            "path": "contactMessageError"
+                        }' ></textarea>
+                    </label>
+                </div>
+                <div class="col nopad">
+                    <button class="expand" z--click="onSubmitMessage">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="s12 m7 col">
+            <h4><i>News</i></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="s12 m5 col">
+            <a class="twitter-timeline" data-theme="dark" data-height="750" href="https://twitter.com/HouseSerpens?ref_src=twsrc%5Etfw">Tweets by HouseSerpens</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </section>
+</div>

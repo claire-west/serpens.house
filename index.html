@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>House Serpens | Pierce the Veil</title>
     <link id="favicon" rel="icon" href="favicon.ico" />
-    <link href="http://lib.claire-west.ca/vend/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://lib.claire-west.ca/vend/fonts/fontawesome-all.min.css" rel="stylesheet" />
     <link href="css/layout.css" rel="stylesheet"></link>
     <link href="css/style.css" rel="stylesheet"></link>
 
@@ -13,70 +13,38 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="House Serpens | Pierce the Veil">
     <!-- <meta property="og:description" content=""> -->
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/436020727620304896/436804538993737728/serpens.png">
+    <meta property="og:image" content="http://serpens.house/static/banner.png">
 </head>
 <body>
-    <nav class="top-bar">
-        <div class="top-bar-left">
-            <!-- <ul class="menu appMenu">
-                <li class="menu-text offCanvasShow"><button class="menu-icon" type="button" data-open="offCanvas"><i class="fa fa-refresh fa-spin appLoading"></i></button></li>
-            </ul> -->
-            <!-- <h3>House Serpens</h3> -->
-        </div>
-        <div class="top-bar-center">
-            <!-- <img src="static/serpens-white.png" /> -->
-        </div>
-        <div class="top-bar-right">
-            <!-- <div class="signOut menu-text" hidden>
-                <span class="hide-for-small-only"></span>
-                <a>(sign out)</a>
-            </div> -->
-        </div>
-        <div class="top-bar-gradient"></div>
-    </nav>
-    <div class="top-bar-spacer"></div>
-    <section class="row">
-        <div class="s12 m7 col">
-            <h4>Pierce the Veil</h4>
-            <p>text</p>
-            <p>text</p>
-            <p>text</p>
-            <p>text</p>
-            <p>text</p>
-            <p>text</p>
-        </div>
-        <div class="s12 m5 col">
-            <div class="row nopad">
-                <div class="col nopad">
-                    <h4><i>Contact Us</i></h4>
+    <div class="top-bar">
+        <div class="top-bar-img"></div>
+        <nav class="top-bar-nav">
+            <div>
+                <div class="top-bar-left">
+                    <a href="#" class="button active">
+                        <i class="fas fa-home"></i>
+                        <span class="sr-only">Home</span>
+                    </a>
+                    <!-- <a href="#news" class="button">News</a> -->
+                    <!-- <a href="#media" class="button">Media</a> -->
                 </div>
-                <div class="col nopad">
-                    <label>
-                        <span>Your Name</span>
-                        <input id="contactName" type="text" />
-                    </label>
-                </div>
-                <div class="col nopad">
-                    <label>
-                        <span>Message</span>
-                        <textarea id="message" rows="5"></textarea>
-                    </label>
-                </div>
-                <div class="col nopad">
-                    <button id="submit" class="expand">Submit</button>
+                <div class="top-bar-right">
+                    <a class="button" z--click="onLoginPress" z--visible="!userInfo">
+                        <span>Log In</span>
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a class="button" z--click="" z--visible="!!userInfo" style="display: none;">
+                        <i class="far fa-user"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="row">
-        <div class="s12 m7 col">
-            <h4><i>News</i></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="s12 m5 col">
-            <a class="twitter-timeline" data-theme="dark" data-height="750" href="https://twitter.com/HouseSerpens?ref_src=twsrc%5Etfw">Tweets by HouseSerpens</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </section>
+        </nav>
+    </div>
+    <div class="top-bar-spacer"></div>
+
+    <section id="app-home" data-app="House Serpens | Pierce the Veil" class="app defaultApp" hidden></section>
+    <!-- <section id="app-news" data-app="House Serpens | News" class="app" hidden></section> -->
+    <!-- <section id="app-media" data-app="House Serpens | Media" class="app" hidden></section> -->
 
     <div class="modal" hidden>
         <div class="dialog">
@@ -87,24 +55,20 @@
     </div>
 
     <script src="http://lib.claire-west.ca/vend/js/jquery.min.js"></script>
-    <script src="js/core.js"></script>
-    <!-- <script
+    <script
         src="http://lib.claire-west.ca/core/js/dynCore.js"
         data-res='{
-            "url": "http://claire-west.ca",
-            "node": "https://node.claire-west.ca"
+            "node": "https://node.serpens.house"
         }'
         data-ns='{
-            "hub": "/hub"
-        }'></script>
+            "serpens": ""
+        }'>
+    </script>
     <script>
         (function(dynCore) {
             dynCore.ready(function(modules) {
-                dynCore.require([
-                    'hub.appHub',
-                    'lib.yearFooter'
-                ]);
+                dynCore.require('serpens.appCore');
             });
         })(window.dynCore);
-    </script> -->
+    </script>
 </body>
