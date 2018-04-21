@@ -45,7 +45,30 @@
 
         bind($('body'), globalModel);
 
+        var roleIDs = {
+            serpens: '435452473608503306',
+            mod: '434800155582005251',
+            admin: '434800365301399572'
+        };
+
         globalModel._set('onLoginPress', centralAuth.discord.toLogin);
+        globalModel._set('isSerpens', function(roles) {
+            for (var i = 0; i < roles.length; i++) {
+                if (roles[i].roleID === roleIDs.serpens) {
+                    return true;
+                }
+            }
+            return false;
+        });
+        globalModel._set('isModOrAdmin', function(roles) {
+            for (var i = 0; i < roles.length; i++) {
+                if (roles[i].roleID === roleIDs.mod ||
+                    roles[i].roleID === roleIDs.admin) {
+                    return true;
+                }
+            }
+            return false;
+        });
 
         if (window.location.hash.startsWith('#access_token=')) {
             var search = location.hash.substring(1);

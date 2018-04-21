@@ -22,7 +22,7 @@
             <div>
                 <div class="top-bar-left">
                     <a href="#" class="button active">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-home" title="Home"></i>
                         <span class="sr-only">Home</span>
                     </a>
                     <!-- <a href="#news" class="button">News</a> -->
@@ -33,8 +33,16 @@
                         <span>Log In</span>
                         <i class="fab fa-discord"></i>
                     </a>
-                    <a class="button" z--click="" z--visible="!!userInfo" style="display: none;">
-                        <i class="far fa-user"></i>
+                    <a class="button active" z--click="" z--visible="!!userInfo" style="display: none;">
+                        <img src="static/icon.png" title="Verified House Serpens" z--visible='{
+                            "path": "userInfo.roles",
+                            "fn": "isSerpens"
+                        }'></i>
+                        <i class="far fa-check-circle" title="Verified Mod" z--visible='{
+                            "path": "userInfo.roles",
+                            "fn": "isModOrAdmin"
+                        }'></i>
+                        <i class="far fa-user" title="Account Info"></i>
                     </a>
                 </div>
             </div>
