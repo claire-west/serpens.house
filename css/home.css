@@ -1,0 +1,24 @@
+#app-home .heading {
+    background-color: #202225;
+    padding: 0.5rem;
+}
+
+#app-home .news a {
+    float: right;
+}
+
+#app-home .news p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#app-home .news h3 + p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#app-home .news img {
+    height: 10rem;
+    float: right;
+    margin-left: 0.75rem;
+}

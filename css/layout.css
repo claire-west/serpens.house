@@ -31,9 +31,29 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 
+hr {
+    max-width: 75rem;
+    height: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #cacaca;
+    border-left: 0;
+    margin: 1.25rem auto;
+    clear: both;
+    box-sizing: content-box;
+}
+
+h4 {
+    font-size: 1.17em;
+}
+
 a {
-    color: inherit;
+    color: #1b95e0;
     text-decoration: none;
+}
+
+.top-bar a {
+    color: hsla(0,0%,100%,.85);
 }
 
 .top-bar {
@@ -181,6 +201,18 @@ a {
     .top-bar-spacer {
         height: 6.75rem;
     }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .col {

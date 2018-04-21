@@ -113,6 +113,7 @@
             }
             $('.app').hide();
             $app.show();
+            $('footer').show();
 
             $('title').text($app.data('app'));
         });
