@@ -91,10 +91,7 @@
             $('.app').hide();
             $app.show();
 
-            dynCore.favicon(apps[app].favicon);
             $('title').text($app.data('app'));
-
-            
         });
 
         hashNav.bindNavSection(function(app, section, args) {
