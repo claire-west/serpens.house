@@ -1,0 +1,24 @@
+<div>
+    <h4>Account Info</h4>
+    <label>
+        <span>Username:</span>
+        <span z--bind="userInfo.name"></span>
+    </label>
+    <label>
+        <span>Display Name:</span>
+        <span z--bind="userInfo.display"></span>
+    </label>
+    <label>
+        <span>Roles:</span>
+        <span z--bind='{
+            "path": "userInfo.roles",
+            "fn": "roleList"
+        }'></span>
+    </label>
+    <label>Avatar:</label>
+    <img z--bind="userInfo.avatar" />
+    <div class="options">
+        <button z--click="onLogoutPress" class="error redText darkBackground left">Log Out</button>
+        <button z--click="closeModal">Close</button>
+    </div>
+</div>

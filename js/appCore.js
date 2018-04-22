@@ -52,7 +52,30 @@
         };
 
         globalModel._set('onLoginPress', centralAuth.discord.toLogin);
+        globalModel._set('onUserInfoPress', function() {
+            globalModel.openModal('account', globalModel);
+        });
+        globalModel._set('onLogoutPress', function() {
+            var self = this;
+            centralAuth.discord.doLogout().always(function() {
+                globalModel._set('userInfo', null);
+                globalModel.closeModal.call(self);
+            });
+        });
+        globalModel._set('roleList', function(roles) {
+            if (!roles) {
+                return '';
+            }
+            var roleNames = [];
+            for (var i = 0; i < roles.length; i++) {
+                roleNames.push(roles[i].roleName);
+            }
+            return roleNames.join(', ');
+        });
         globalModel._set('isSerpens', function(roles) {
+            if (!roles) {
+                return false;
+            }
             for (var i = 0; i < roles.length; i++) {
                 if (roles[i].roleID === roleIDs.serpens) {
                     return true;
@@ -61,6 +84,9 @@
             return false;
         });
         globalModel._set('isModOrAdmin', function(roles) {
+            if (!roles) {
+                return false;
+            }
             for (var i = 0; i < roles.length; i++) {
                 if (roles[i].roleID === roleIDs.mod ||
                     roles[i].roleID === roleIDs.admin) {
@@ -93,8 +119,21 @@
             }
         });
 
-        $('.modal .dialog button').click(function() {
-            $('.modal').hide();
+        globalModel._set('openModal', function(fragment, model) {
+            $('.modal .dialog').empty();
+            $('.modal .dialog').append('<z--frag-' + fragment + '/>');
+            bind($('.modal'), model);
+            $('.modal').show();
+        });
+        globalModel._set('closeModal', function() {
+            var $element = $(this).parent();
+            while ($element.length) {
+                if ($element.hasClass('modal')) {
+                    $element.hide();
+                    break;
+                }
+                $element = $element.parent();
+            }
         });
 
         hashNav.bindNavApp(function(app, section, args) {

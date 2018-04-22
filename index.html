@@ -33,7 +33,7 @@
                         <span>Log In</span>
                         <i class="fab fa-discord"></i>
                     </a>
-                    <a class="button active" z--click="" z--visible="!!userInfo" style="display: none;">
+                    <a class="button active" z--click="onUserInfoPress" z--visible="!!userInfo" style="display: none;">
                         <img src="static/icon.png" title="Verified House Serpens" z--visible='{
                             "path": "userInfo.roles",
                             "fn": "isSerpens"
@@ -63,13 +63,7 @@
         </div>
     </footer>
 
-    <div class="modal" hidden>
-        <div class="dialog">
-            <h4></h4>
-            <p></p>
-            <button>OK</button>
-        </div>
-    </div>
+    <div class="modal" hidden><div class="dialog"></div></div>
 
     <script src="http://lib.claire-west.ca/vend/js/jquery.min.js"></script>
     <script

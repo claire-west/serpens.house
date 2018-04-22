@@ -1,5 +1,5 @@
 (function(dynCore) {
-    dynCore.when(dynCore.require([ 'serpens.appCore', 'lib.isMobile' ])).done(function(modules, appCore) {
+    dynCore.when(dynCore.require([ 'serpens.appCore', 'lib.globalModel', 'lib.bind' ])).done(function(modules, appCore, globalModel, bind) {
         appCore('home', {
             model: {
                 test: "test data binding"
@@ -33,15 +33,11 @@
                     }),
                     contentType: 'application/json'
                 }).done(function() {
-                    $('.modal .dialog h4').text('Message Sent');
-                    $('.modal .dialog p').text('You will receive a response in a timely manner.');
-                    $('.modal').show();
+                    globalModel.openModal('home-contactsent', self.model);
                     self.model._set('contactName', '');
                     self.model._set('contactMessage', '');
                 }).fail(function() {
-                    $('.modal .dialog h4').text('Error');
-                    $('.modal .dialog p').text('Unable to deliver message.');
-                    $('.modal').show();
+                    globalModel.openModal('home-contacterror', self.model);
                 });
             }
         });
