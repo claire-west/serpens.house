@@ -203,7 +203,7 @@ a {
     }
     
     .top-bar-spacer {
-        height: 6.75rem;
+        height: 8.25rem;
     }
 }
 
@@ -264,6 +264,18 @@ a {
 
 .nopad, .row.nopad, .col.nopad, .col .row .col.nopad {
     padding: 0;
+}
+
+.nopad-bottom, .row.nopad-bottom, .col.nopad-bottom, .col .row .col.nopad-bottom {
+    padding-bottom: 0;
+}
+
+.nopad-top, .row.nopad-top, .col.nopad-top, .col .row .nopad-top {
+    padding-top: 0;
+}
+
+.margin-top-0 {
+    margin-top: 0;
 }
 
 .s1{width:8.333333333333333%;width:calc(100%/12);}

@@ -1,0 +1,72 @@
+<div class="row nopad-bottom">
+    <div class="tabs col">
+        <div>
+            <a z--click="toView" z--class='{
+                "class": "active",
+                "path": "@section",
+                "eq": "view"
+            }'>
+                <span>View</span>
+            </a>
+            <a z--click="toEdit" z--class='{
+                "class": "active",
+                "path": "@section",
+                "eq": "edit"
+            }'>
+                <span>Edit</span>
+            </a>
+            <a z--click="toComments" z--class='{
+                "class": "active",
+                "path": "@section",
+                "eq": "comments"
+            }'>
+                <span>Comments</span>
+            </a>
+            <a z--click="toHistory" z--class='{
+                "class": "active",
+                "path": "@section",
+                "eq": "history"
+            }'>
+                <span>History</span>
+            </a>
+        </div>
+        <div>
+            <a class="highlight" z--click="saveDoc" z--visible='{
+                "path": "@section",
+                "eq": "edit"
+            }'>Save</a>
+        </div>
+    </div>
+</div>
+<section id="doc-view" class="row nopad-top contentSection defaultSection" hidden>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="doc-content">Content</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="doc-edit" class="row nopad-top contentSection" hidden>
+    <div class="col">
+        <textarea class="doc-editor" />
+    </div>
+</section>
+<section id="doc-comments" class="row nopad-top contentSection" hidden>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div>Comments</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="doc-history" class="row nopad-top contentSection" hidden>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div>History</div>
+            </div>
+        </div>
+    </div>
+</section>

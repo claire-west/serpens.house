@@ -8,6 +8,7 @@
     <link href="http://lib.claire-west.ca/vend/fonts/fontawesome-all.min.css" rel="stylesheet" />
     <link href="css/layout.css" rel="stylesheet"></link>
     <link href="css/style.css" rel="stylesheet"></link>
+    <link href="http://lib.claire-west.ca/vend/sceditor/minified/themes/default.min.css" rel="stylesheet"></link>
 
     <meta property="og:site_name" content="House Serpens">
     <meta property="og:type" content="website">
@@ -21,11 +22,23 @@
         <nav class="top-bar-nav">
             <div>
                 <div class="top-bar-left">
-                    <a href="#" class="button active">
+                    <a href="#" class="button" z--class='{
+                        "class": "active",
+                        "path": "@app",
+                        "eq": "home"
+                    }'>
                         <i class="fas fa-home" title="Home"></i>
                         <span class="sr-only">Home</span>
                     </a>
                     <!-- <a href="#news" class="button">News</a> -->
+                    <a href="#docs" class="button" z--visible='{
+                        "path": "userInfo.roles",
+                        "fn": "isSerpens"
+                    }' z--class='{
+                        "class": "active",
+                        "path": "@app",
+                        "contains": "doc"
+                    }' style="display: none;">Docs</a>
                     <!-- <a href="#media" class="button">Media</a> -->
                 </div>
                 <div class="top-bar-right">
@@ -34,7 +47,7 @@
                         <i class="fab fa-discord"></i>
                     </a>
                     <a class="button active" z--click="onUserInfoPress" z--visible="!!userInfo" style="display: none;">
-                        <img src="static/icon.png" title="Verified House Serpens" z--visible='{
+                        <img src="static/logo.png" title="Verified House Serpens" z--visible='{
                             "path": "userInfo.roles",
                             "fn": "isSerpens"
                         }'></i>
@@ -51,6 +64,8 @@
     <div class="top-bar-spacer"></div>
 
     <section id="app-home" data-app="House Serpens | Pierce the Veil" class="app defaultApp" hidden></section>
+    <section id="app-docs" data-app="Documents | Pierce the Veil" class="app" hidden></section>
+    <section id="app-doc" data-app="Documents | Pierce the Veil" class="app" hidden></section>
     <!-- <section id="app-news" data-app="House Serpens | News" class="app" hidden></section> -->
     <!-- <section id="app-media" data-app="House Serpens | Media" class="app" hidden></section> -->
 
@@ -66,13 +81,15 @@
     <div class="modal" hidden><div class="dialog"></div></div>
 
     <script src="http://lib.claire-west.ca/vend/js/jquery.min.js"></script>
+    <script src="http://lib.claire-west.ca/vend/sceditor/minified/sceditor.min.js"></script>
+    <script src="http://lib.claire-west.ca/vend/sceditor/minified/formats/bbcode.min.js"></script>
     <script
         src="http://lib.claire-west.ca/core/js/dynCore.js"
         data-res='{
             "node": "https://node.serpens.house"
         }'
         data-ns='{
-            "serpens": "/"
+            "serpens": "http://localhost/serpens/"
         }'>
     </script>
     <script>

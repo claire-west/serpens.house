@@ -1,9 +1,7 @@
 (function(dynCore) {
-    dynCore.when(dynCore.require([ 'serpens.appCore', 'lib.globalModel', 'lib.bind' ])).done(function(modules, appCore, globalModel, bind) {
+    dynCore.when(dynCore.require([ 'serpens.appCore', 'lib.globalModel' ])).done(function(modules, appCore, globalModel) {
         appCore('home', {
-            model: {
-                test: "test data binding"
-            },
+            model: {},
 
             onInit: function() {
                 var self = this;
