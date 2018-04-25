@@ -42,12 +42,18 @@
     <div class="col">
         <div class="row">
             <div class="col">
-                <div class="doc-content">Content</div>
+                <h2 z--bind="doc.title"></h2>
+            </div>
+            <div class="col">
+                <div class="doc-content"></div>
             </div>
         </div>
     </div>
 </section>
 <section id="doc-edit" class="row nopad-top contentSection" hidden>
+    <div class="m6 l4 col">
+        <input type="text" placeholder="Doc Title" style="margin-bottom: 0;" z--bind="doc.title_new" />
+    </div>
     <div class="col">
         <textarea class="doc-editor" />
     </div>

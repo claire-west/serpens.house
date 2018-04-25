@@ -1,10 +1,30 @@
-<section id="doc-list" class="row contentSection defaultSection" hidden>
-    <div class="col">
-        
+<section id="docs-list" class="row contentSection defaultSection" hidden>
+    <div class="col tabs">
+        <div>
+            <a href="#docs-create">
+                <span>New Doc</span>
+            </a>
+        </div>
     </div>
 </section>
-<section id="doc-create" class="row contentSection" hidden>
+<section id="docs-create" class="row contentSection" hidden>
+    <div class="col tabs">
+        <div>
+            <a href="#docs-list">
+                <span>Cancel</span>
+            </a>
+            <a class="highlight" z--click="saveDoc">
+                <span>Save</span>
+            </a>
+        </div>
+    </div>
+    <div class="m6 l4 col">
+        <input type="text" placeholder="Doc Title" style="margin-bottom: 0;" z--bind="title" />
+    </div>
     <div class="col">
         <textarea class="doc-editor" />
+    </div>
+    <div class="col content-view">
+
     </div>
 </section>

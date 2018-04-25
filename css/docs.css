@@ -1,0 +1,28 @@
+#app-docs .tabs {
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#app-docs .tabs > div {
+    display: flex;
+}
+
+#app-docs .tabs a {
+    height: 100%;
+    color: hsla(0,0%,100%,.85);
+    background-color: hsla(218,5%,47%,.3);
+    display: flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+#app-docs .tabs a:hover,
+#app-docs .tabs a.active {
+    background-color: #202225;
+}
+
+#app-docs .tabs a.highlight {
+    background-color: #1b95e0;
+}

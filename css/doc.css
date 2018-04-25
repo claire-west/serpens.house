@@ -33,6 +33,26 @@
     border: 1px solid #202225;
 }
 
+#app-doc .doc-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#app-doc .doc-content img {
+    max-height: 20rem;
+}
+
+#app-doc .doc-content ol,
+#app-doc .doc-content ul {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+#app-doc .doc-content ol > br,
+#app-doc .doc-content ul > br {
+    display: none;
+}
+
 #app-doc .sceditor-container {
     background-color: #2f3136;
     border: none;

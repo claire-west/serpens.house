@@ -80,9 +80,25 @@
 
     <div class="modal" hidden><div class="dialog"></div></div>
 
+    <div class="cookie-indicator" z--visible="!cookieAcknowledge">
+        <p>
+            <span>This website uses cookies to keep track of your session&nbsp;</span>
+            <a z--click="onCookieAcknowledge">Okay</a>
+        </p>
+    </div>
+
     <script src="http://lib.claire-west.ca/vend/js/jquery.min.js"></script>
     <script src="http://lib.claire-west.ca/vend/sceditor/minified/sceditor.min.js"></script>
     <script src="http://lib.claire-west.ca/vend/sceditor/minified/formats/bbcode.min.js"></script>
+    <!-- <script
+        src="http://lib.claire-west.ca/core/js/dynCore.js"
+        data-res='{
+            "node": "http://localhost:5000"
+        }'
+        data-ns='{
+            "serpens": "http://localhost/serpens/"
+        }'>
+    </script> -->
     <script
         src="http://lib.claire-west.ca/core/js/dynCore.js"
         data-res='{

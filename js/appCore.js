@@ -51,6 +51,12 @@
             admin: '434800365301399572'
         };
 
+        globalModel._set('cookieAcknowledge', localStorage.getItem('cookieAcknowledge'));
+        globalModel._set('onCookieAcknowledge', function() {
+            localStorage.setItem('cookieAcknowledge', 'true');
+            globalModel._set('cookieAcknowledge', localStorage.getItem('cookieAcknowledge'));
+        });
+
         globalModel._set('onLoginPress', centralAuth.discord.toLogin);
         globalModel._set('onUserInfoPress', function() {
             globalModel.openModal('account', globalModel);
