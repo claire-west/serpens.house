@@ -42,7 +42,7 @@
     <div class="col">
         <div class="row">
             <div class="col">
-                <h2 z--bind="doc.title"></h2>
+                <h1 z--bind="doc.title" class="text-center"></h1>
             </div>
             <div class="col">
                 <div class="doc-content"></div>
@@ -55,7 +55,8 @@
         <input type="text" placeholder="Doc Title" style="margin-bottom: 0;" z--bind="doc.title_new" />
     </div>
     <div class="col">
-        <textarea class="doc-editor" />
+        <z--frag-wysihtmltoolbar id="docs-edit-toolbar" />
+        <div id="docs-edit-editor" class="editor" data-placeholder=""></div>
     </div>
 </section>
 <section id="doc-comments" class="row nopad-top contentSection" hidden>

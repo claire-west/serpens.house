@@ -17,24 +17,17 @@
             },
 
             onInit: function() {
-                var editor = this.$app.find('.doc-editor').get(0);
-                sceditor.create(editor, {
-                    format: 'bbcode',
-                    toolbar: 'bold,italic|size|left,center,right|bulletlist,orderedlist|image,link',
-                    emoticonsEnabled: false,
-                    height: '500',
-                    bbcodeTrim: true,
-                    resizeWidth: false,
-                    style: 'http://lib.claire-west.ca/vend/sceditor/minified/themes/default.min.css'
+                var editor = new wysihtml.Editor('docs-create-editor', {
+                    toolbar: 'docs-create-toolbar',
+                    parserRules: wysihtmlParserRules
                 });
-                this.editor = sceditor.instance(editor);
 
                 var self = this;
                 this.model._set('saveDoc', function(model) {
                     var requestBody = {
                         doc_id: uuid(),
                         title: model.title,
-                        content: self.editor.val()
+                        content: editor.getValue()
                     };
                     cors({
                         url: url + '/serpens/doc',
@@ -43,7 +36,7 @@
                         contentType: 'application/json'
                     }).done(function(resp) {
                         model._set('title', '');
-                        self.editor.val('');
+                        editor.setValue('');
                         window.location.hash = '#doc-view/' + resp.doc_id;
                     }).fail(function() {
                         self.model._set('errorMessage', 'Unable to save document.');

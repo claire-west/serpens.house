@@ -10,6 +10,8 @@
         
         appCore('doc', {
             model: {
+                promptLabel: 'Briefly summarize your changes:',
+
                 toView: function(model) {
                     window.location.hash = '#doc-view/' + model.docId;
                 },
@@ -28,25 +30,27 @@
             },
 
             onInit: function() {
-                var editor = this.$app.find('.doc-editor').get(0);
-                sceditor.create(editor, {
-                    format: 'bbcode',
-                    toolbar: 'bold,italic|size|left,center,right|bulletlist,orderedlist|image,link',
-                    emoticonsEnabled: false,
-                    height: '500',
-                    bbcodeTrim: true,
-                    resizeWidth: false,
-                    style: 'http://lib.claire-west.ca/vend/sceditor/minified/themes/default.min.css'
+                this.editor = new wysihtml.Editor('docs-edit-editor', {
+                    toolbar: 'docs-edit-toolbar',
+                    parserRules: wysihtmlParserRules
                 });
-                this.editor = sceditor.instance(editor);
 
                 var self = this;
                 this.model._set('saveDoc', function(model) {
+                    self.model._set('promptValue', '');
+                    globalModel.openModal('textprompt', self.model);
+                });
+
+                this.model._set('confirmPrompt', function() {
+                    var model = self.model;
                     var requestBody = {
                         doc_id: model.doc.doc_id,
                         title: model.doc.title_new,
-                        content: self.editor.val()
+                        summary: model.promptValue,
+                        content: self.editor.getValue()
                     };
+
+                    var element = this;
                     cors({
                         url: url + '/serpens/doc',
                         method: 'PUT',
@@ -54,6 +58,7 @@
                         contentType: 'application/json'
                     }).done(function(resp) {
                         self.onDocLoad(resp);
+                        globalModel.closeModal.call(element);
                         window.location.hash = '#doc-view/' + resp.doc_id;
                     }).fail(function() {
                         self.model._set('errorMessage', 'Unable to save document.');
@@ -116,8 +121,8 @@
             onDocLoad: function(doc) {
                 doc.title_new = doc.title;
                 this.model._set('doc', doc);
-                this.$app.find('.doc-content').html(doc.html);
-                this.editor.val(doc.content);
+                this.$app.find('.doc-content').html(doc.content);
+                this.editor.setValue(doc.content);
             }
         });
     });

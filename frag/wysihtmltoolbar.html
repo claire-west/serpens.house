@@ -1,0 +1,63 @@
+<div class="editor-toolbar">
+    <div class="block">
+        <a data-wysihtml-command="bold" title="CTRL+B"><i class="fas fa-bold"></i></a>
+        <a data-wysihtml-command="italic" title="CTRL+I"><i class="fas fa-italic"></i></a>
+        <a data-wysihtml-command="underline" title="CTRL+U"><i class="fas fa-underline"></i></a>
+    </div>
+    <div class="block">
+        <a data-wysihtml-command="createLink" title="link"><i class="fas fa-link"></i></a>
+        <div data-wysihtml-dialog="createLink" style="display: none;">
+            <label>
+                Link:
+                <input type="text" data-wysihtml-dialog-field="href" value="http://">
+            </label>
+            <a data-wysihtml-dialog-action="save">OK</a>&nbsp;<a data-wysihtml-dialog-action="cancel">Cancel</a>
+        </div>
+        <a data-wysihtml-command="removeLink" title="unlink"><i class="fas fa-unlink"></i></a>
+        <a data-wysihtml-command="insertImage" title="image"><i class="fas fa-image"></i></a>
+        <div data-wysihtml-dialog="insertImage" style="display: none;">
+            <label>
+                Image:
+                <input type="text" data-wysihtml-dialog-field="src" value="http://">
+            </label>
+            <label>
+                Height:
+                <input type="text" data-wysihtml-dialog-field="height" value="">
+            </label>
+            <a data-wysihtml-dialog-action="save">OK</a>&nbsp;<a data-wysihtml-dialog-action="cancel">Cancel</a>
+        </div>
+    </div>
+
+    <div class="block">
+        <a data-wysihtml-command="fontSizeStyle"><i class="fas fa-text-height"></i></a>
+        <div data-wysihtml-dialog="fontSizeStyle" style="display: none;">
+            <a data-wysihtml-command="formatBlock" data-wysihtml-command-value="h2">Header</a>
+            <a data-wysihtml-command="formatBlock" data-wysihtml-command-value="p">Body</a>
+            <!-- <a class="wysiwyg-font-size-xx-small" data-wysihtml-command="fontSize" data-wysihtml-command-value="xx-small" style="font-size:12px;" unselectable="on">xx-small</a>
+            <a class="wysiwyg-font-size-x-small" data-wysihtml-command="fontSize" data-wysihtml-command-value="x-small" style="font-size:14px;" unselectable="on">x-small</button>
+            <a class="wysiwyg-font-size-small" data-wysihtml-command="fontSize" data-wysihtml-command-value="small" style="font-size:16px;" unselectable="on">small</a>
+            <a class="wysiwyg-font-size-medium" data-wysihtml-command="fontSize" data-wysihtml-command-value="medium" style="font-size:18px;;" unselectable="on">medium</a>
+            <a class="wysiwyg-font-size-large" data-wysihtml-command="fontSize" data-wysihtml-command-value="large" style="font-size:20px;" unselectable="on">large</a>
+            <a class="wysiwyg-font-size-x-large" data-wysihtml-command="fontSize" data-wysihtml-command-value="x-large" style="font-size:23px;" unselectable="on">x-large</a>
+            <a class="wysiwyg-font-size-xx-large" data-wysihtml-command="fontSize" data-wysihtml-command-value="xx-large" style="font-size:25px;" unselectable="on">xx-large</a> -->
+            <!-- Size:
+            <input type="text" data-wysihtml-dialog-field="size" style="width: 60px;" value="" />
+            <a data-wysihtml-dialog-action="save">OK</a>&nbsp;<a data-wysihtml-dialog-action="cancel">Cancel</a> -->
+        </div>
+    </div>
+
+    <div class="block">
+        <a data-wysihtml-command="alignLeftStyle" title="Align Left"><i class="fas fa-align-left"></i></a>
+        <a data-wysihtml-command="alignCenterStyle" title="Align Center"><i class="fas fa-align-center"></i></a>
+    </div>
+
+    <div class="block">
+        <a data-wysihtml-command="insertUnorderedList"><i class="fas fa-list-ul"></i></a>
+        <a data-wysihtml-command="insertOrderedList"><i class="fas fa-list-ol"></i></a>
+    </div>
+
+    <div class="block">
+        <a data-wysihtml-command="undo" title="Undo"><i class="fas fa-undo"></i></a>
+        <a data-wysihtml-command="redo" title="Redo"><i class="fas fa-redo"></i></a>
+    </div>
+</div>

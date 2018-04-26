@@ -1,0 +1,55 @@
+.editor-toolbar {
+    height: 2rem;
+    margin: 1px;
+}
+
+.editor-toolbar .block {
+    display: flex;
+    float: left;
+    border: 1px solid #2f3136;
+}
+
+.editor-toolbar .block:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.editor-toolbar .block a {
+    color: hsla(0,0%,100%,.85);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: hsla(218,5%,47%,.3);
+}
+
+.editor-toolbar .block a + div,
+.editor-toolbar .block a.wysihtml-command-active,
+.editor-toolbar .block a.wysihtml-command-dialog-opened {
+    background-color: #202225;
+}
+
+.editor-toolbar .block a + div {
+    position: absolute;
+    top: 2rem;
+    padding: 0.5rem;
+}
+
+.editor-toolbar .block a + div input {
+    width: 100%;
+}
+
+.editor {
+    clear: both;
+    min-height: 45rem;
+    padding: 0.5rem;
+    border: 1px solid #2f3136;
+    background-color: hsla(218,5%,47%,.3);
+}
+
+.editor p {
+    margin: 0;
+}
+
+.editor img {
+    max-height: 20rem;
+}

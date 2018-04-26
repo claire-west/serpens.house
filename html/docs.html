@@ -22,7 +22,8 @@
         <input type="text" placeholder="Doc Title" style="margin-bottom: 0;" z--bind="title" />
     </div>
     <div class="col">
-        <textarea class="doc-editor" />
+        <z--frag-wysihtmltoolbar id="docs-create-toolbar" />
+        <div id="docs-create-editor" class="editor" data-placeholder=""></div>
     </div>
     <div class="col content-view">
 

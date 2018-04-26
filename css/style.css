@@ -1,4 +1,4 @@
-[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea {
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea, select, option {
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -14,6 +14,10 @@
     transition: box-shadow .5s,border-color .25s ease-in-out;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+option {
+    background-color: #202225;
 }
 
 button, input, optgroup, select, textarea {
