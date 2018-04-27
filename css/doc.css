@@ -10,6 +10,7 @@
 
 #app-doc .tabs a {
     height: 100%;
+    line-height: 2.5rem;
     color: hsla(0,0%,100%,.85);
     background-color: hsla(218,5%,47%,.3);
     display: flex;

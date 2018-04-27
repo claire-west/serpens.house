@@ -6,6 +6,17 @@
             </a>
         </div>
     </div>
+    <div class="col">
+        <div class="row nopad" z--iterate="list">
+            <a class="doc-list-item col" z--template z--bind='{
+                "fn": "getDocHref",
+                "path": ">doc_id"
+            }'>
+                <h3 z--bind=">title"></h3>
+                <span>Owner: <span z--bind=">display"></span></span>
+            </a>
+        </div>
+    </div>
 </section>
 <section id="docs-create" class="row contentSection" hidden>
     <div class="col tabs">
@@ -24,8 +35,5 @@
     <div class="col">
         <z--frag-wysihtmltoolbar id="docs-create-toolbar" />
         <div id="docs-create-editor" class="editor" data-placeholder=""></div>
-    </div>
-    <div class="col content-view">
-
     </div>
 </section>

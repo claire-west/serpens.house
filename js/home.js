@@ -1,5 +1,7 @@
 (function(dynCore) {
     dynCore.when(dynCore.require([ 'serpens.appCore', 'lib.globalModel' ])).done(function(modules, appCore, globalModel) {
+        var url = dynCore.getResource('node');
+
         appCore('home', {
             model: {},
 
@@ -23,7 +25,7 @@
 
                 var self = this;
                 $.ajax({
-                    url: "https://node.claire-west.ca/serpens/contact",
+                    url: url + "/serpens/contact",
                     method: "POST",
                     data: JSON.stringify({
                         value1: name,

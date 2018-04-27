@@ -13,7 +13,9 @@
 
         appCore('docs', {
             model: {
-                
+                getDocHref: function(doc_id) {
+                    return '#doc-view/' + doc_id;
+                }
             },
 
             onInit: function() {
@@ -43,6 +45,47 @@
                         globalModel.openModal('error', self.model);
                     });
                 });
+            },
+
+            refresh: function() {
+                var self = this;
+                if (centralAuth.discord.info) {
+                    if (globalModel.isSerpens(centralAuth.discord.info.roles)) {
+                        self.loadList();
+                    } else {
+                        window.location.replace('#');
+                    }
+                } else {
+                    centralAuth.discord.checkLogin().done(function(info) {
+                        if (globalModel.isSerpens(info.roles)) {
+                            self.loadList();
+                        } else {
+                            window.location.replace('#');
+                        }
+                    }).fail(function() {
+                        window.location.replace('#');
+                    });
+                }
+            },
+
+            loadList: function() {
+                var self = this;
+                self.model._set('list', []);
+                return cors(url + '/serpens/doc').done(function(resp) {
+                    self.model._set('list', resp);
+                }).fail(function() {
+                    window.location.replace('#');
+                });
+            },
+
+            onNav: {
+                '': function() {
+                    this.onNav.list.call(this);
+                },
+
+                list: function() {
+                    this.refresh();
+                }
             }
         });
     });

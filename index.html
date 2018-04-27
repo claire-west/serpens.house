@@ -94,15 +94,6 @@
     <script src="http://lib.claire-west.ca/vend/wysihtml/dist/wysihtml.toolbar.js"></script>
     <script src="http://lib.claire-west.ca/vend/wysihtml/parser_rules/advanced_and_extended.js"></script>
     </script>
-    <!-- <script
-        src="http://lib.claire-west.ca/core/js/dynCore.js"
-        data-res='{
-            "node": "http://localhost:5000"
-        }'
-        data-ns='{
-            "serpens": "http://localhost/serpens/"
-        }'>
-    </script> -->
     <script
         src="http://lib.claire-west.ca/core/js/dynCore.js"
         data-res='{
@@ -115,6 +106,14 @@
     <script>
         (function(dynCore) {
             dynCore.ready(function(modules) {
+                if (window.location.host === 'localhost') {
+                    dynCore.setResource('node', 'http://localhost:5000');
+                    var ns = dynCore.modules('core.namespace');
+                    ns.register({
+                        serpens: '/serpens'
+                    });
+                }
+
                 dynCore.require('serpens.appCore');
             });
         })(window.dynCore);
